@@ -90,12 +90,7 @@ func getDistance(coords [][]float64) float64 {
 		distance += d
 	}
 
-	return round((distance*100)/100, 2)
-}
-
-func round(f float64, places int) float64 {
-	shift := math.Pow(10, float64(places))
-	return math.Floor((f * shift) + .5)
+	return (distance * 100) / 100
 }
 
 func deg2Rad(deg float64) float64 {
