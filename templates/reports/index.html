@@ -1,1 +1,33 @@
-<h1>Reports#Index</h1>
+<h1>Reports</h1>
+
+<a href="/">Back |</a>
+
+<div class="table-responsive">
+    <table class="table table-condensed">
+    <thead>
+        <th>File Name</th>
+        <th>Distance</th>
+        <th>Image</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <%= for (report) in reports { %>
+            <tr>
+            <td><%= report.Filename %></td>
+            <td><%= report.Distance %> Km</td>
+            <td><a class="btn btn-primary" href="<%= report.ImageSrc %>" target="blank">Image</a></td>
+            <td>
+                <ul class="list-inline">
+                    <li>
+                        <a class="btn btn-success btn-xs" href="/reports/<%= report.ID %>"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a class="btn btn-danger btn-xs" href="/reports/<%= report.ID %>" data-method="DELETE" data-confirm="Are you sure?"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+            </td>
+            </tr>
+        <% } %>
+    </tbody>
+    </table>
+</div>
