@@ -37,6 +37,7 @@ func App() *buffalo.App {
 		reports.Use(findReportMW)
 		reports.GET("/", ReportsIndex)
 		reports.GET("/{id}", ReportsShow)
+		reports.DELETE("/{id}", ReportsDestroy)
 		app.POST("/send_file", SendFile)
 	}
 
