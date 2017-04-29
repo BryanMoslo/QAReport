@@ -1,0 +1,8 @@
+create_table("reports", func(t) {
+	t.Column("id", "uuid", {"primary": true})
+	t.Column("filename", "string", {})
+	t.Column("total_time", "integer", {})
+	t.Column("total_distance", "decimal", {})
+	t.Column("from", "string", {})
+	t.Column("to", "string", {})
+})
