@@ -6,13 +6,20 @@ $(function(){
      $(".error-label").addClass("hide");
    });
 
-  $(".send-button input").click(function(){
+  $(".send-button input").click(function(e){
     var inputFileValue = $(".input-file").val();
     var fileExtension = $(".input-file").val().split(".").pop();
     if(inputFileValue === "" || fileExtension !== "log"){
       $(".error-label").removeClass("hide");
       return false;
     }
+
+    // e.stopPropagation();
+    // e.preventDefault();
+    //
+    // setTimeout(function(){
+    //   $("#upload").submit();
+    // }, 3000);
   });
 
   $(".filename").click(function(){
