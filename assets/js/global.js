@@ -14,12 +14,13 @@ $(function(){
       return false;
     }
 
-    // e.stopPropagation();
-    // e.preventDefault();
-    //
-    // setTimeout(function(){
-    //   $("#upload").submit();
-    // }, 3000);
+    e.stopPropagation();
+    e.preventDefault();
+    $(".loading").show();
+
+    setTimeout(function(){
+      $("#upload").submit();
+    }, 800);
   });
 
   $(".filename").click(function(){
@@ -32,12 +33,4 @@ $(function(){
   var year = createdAT.getUTCFullYear();
   $(".created-at").html(`${day}/${month}/${year}`);
   $(".created-at").removeClass("hide");
-
-
-  var totalDistance = Math.round($(".total-distance").html() * 100) / 100;
-  $(".total-distance").html(totalDistance);
-  $(".total-distance").removeClass("hide");
-  var onMiles = totalDistance * 0.621371;
-  $(".miles-values").html(Math.round(onMiles * 100) / 100);
-
 });

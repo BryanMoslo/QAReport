@@ -13,7 +13,7 @@
         </li>
         <li>
           <span class="report-label">Total Distance: </span>
-          <span class="report-value"><i class="total-distance hide"><%= report.Distance %></i> Kilometers / <i class="miles-values"></i> Miles</span>
+          <span class="report-value"><i class="total-distance"><%= floatToString(report.Distance) %></i> Kilometers / <%= milesFor(report.Distance) %> Miles</span>
         </li>
         <li>
           <span class="report-label">Total Time: </span>

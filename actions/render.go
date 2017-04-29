@@ -1,6 +1,8 @@
 package actions
 
 import (
+	"fmt"
+
 	"github.com/gobuffalo/buffalo/render"
 	"github.com/gobuffalo/packr"
 )
@@ -16,6 +18,13 @@ func init() {
 		TemplatesBox: packr.NewBox("../templates"),
 
 		// Add template helpers here:
-		Helpers: render.Helpers{},
+		Helpers: map[string]interface{}{
+			"floatToString": func(val float64) string {
+				return fmt.Sprintf("%.2f", val)
+			},
+			"milesFor": func(val float64) string {
+				return fmt.Sprintf("%.2f", val*0.621371)
+			},
+		},
 	})
 }

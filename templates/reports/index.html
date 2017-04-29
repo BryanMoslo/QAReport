@@ -13,7 +13,7 @@
         <%= for (report) in reports { %>
             <tr>
             <td><%= report.Filename %></td>
-            <td><i class="table-total-distance total-distance-<%= report.ID %>"><%= report.Distance %></i> Km</td>
+            <td><%= floatToString(report.Distance) %> Km</td>
             <td class="created-at"><%= report.CreatedAt %></td>
             <td><a class="btn btn-primary" href="<%= report.ImageSrc %>" target="blank">Image</a></td>
             <td>
