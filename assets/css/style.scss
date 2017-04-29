@@ -35,7 +35,7 @@ h1{
 
   h3{
     font-weight: 200;
-    font-size: 23px;
+    font-size: 16px;
     margin-bottom: 30px;
     color: #333;
   }
@@ -207,8 +207,9 @@ input[type="file"] {
 .back{
   background: #64BC46;
   color: white;
-  padding: 8px 10px;
-  font-size: 14px;
+  padding: 10px 15px;
+  font-size: 15px;
+  font-weight: 100;
   display: inline-block;
 
   &:hover{
@@ -263,4 +264,7 @@ input[type="file"] {
     margin-top: -50px;
     margin-left: -50px;
   }
+}
+.names{
+  font-size: 12px;
 }
