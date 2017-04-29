@@ -11,14 +11,12 @@ import (
 )
 
 type Report struct {
-	ID            uuid.UUID `json:"id" db:"id"`
-	CreatedAt     time.Time `json:"created_at" db:"created_at"`
-	UpdatedAt     time.Time `json:"updated_at" db:"updated_at"`
-	Filename      string    `json:"filename" db:"filename"`
-	TotalTime     int       `json:"total_time" db:"total_time"`
-	TotalDistance float64   `json:"total_distance" db:"total_distance"`
-	From          string    `json:"from" db:"from"`
-	To            string    `json:"to" db:"to"`
+	ID        uuid.UUID `json:"id" db:"id"`
+	CreatedAt time.Time `json:"created_at" db:"created_at"`
+	UpdatedAt time.Time `json:"updated_at" db:"updated_at"`
+	Filename  string    `json:"filename" db:"filename"`
+	Distance  float64   `json:"distance" db:"distance"`
+	ImageSrc  string    `json:"image_src" db:"image_src"`
 }
 
 // Reports is not required by pop and may be deleted
@@ -35,7 +33,6 @@ func (r Reports) String() string {
 func (r *Report) Validate(tx *pop.Connection) (*validate.Errors, error) {
 	return validate.Validate(
 		&validators.StringIsPresent{Field: r.Filename, Name: "Filename"},
-		&validators.StringIsPresent{Field: r.From, Name: "From"},
-		&validators.StringIsPresent{Field: r.To, Name: "To"},
+		&validators.StringIsPresent{Field: r.ImageSrc, Name: "ImageSrc"},
 	), nil
 }

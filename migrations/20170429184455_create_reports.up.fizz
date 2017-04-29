@@ -1,0 +1,6 @@
+create_table("reports", func(t) {
+	t.Column("id", "uuid", {"primary": true})
+	t.Column("filename", "string", {})
+	t.Column("distance", "decimal", {})
+	t.Column("image_src", "text", {})
+})

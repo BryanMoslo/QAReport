@@ -35,8 +35,9 @@ func App() *buffalo.App {
 		app.ServeFiles("/assets", packr.NewBox("../public/assets"))
 		reports := app.Group("/reports")
 		reports.Use(findReportMW)
-		reports.GET("/index", ReportsIndex)
-		reports.GET("/show", ReportsShow)
+		reports.GET("/", ReportsIndex)
+		reports.GET("/{id}", ReportsShow)
+		app.POST("/send_file", SendFile)
 	}
 
 	return app
