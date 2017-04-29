@@ -33,6 +33,10 @@ func App() *buffalo.App {
 		app.GET("/", HomeHandler)
 
 		app.ServeFiles("/assets", packr.NewBox("../public/assets"))
+		reports := app.Group("/reports")
+		reports.Use(findReportMW)
+		reports.GET("/index", ReportsIndex)
+		reports.GET("/show", ReportsShow)
 	}
 
 	return app
