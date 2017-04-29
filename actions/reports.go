@@ -45,3 +45,15 @@ func ReportsIndex(c buffalo.Context) error {
 func ReportsShow(c buffalo.Context) error {
 	return c.Render(200, r.HTML("reports/show.html"))
 }
+
+func ReportsDestroy(c buffalo.Context) error {
+	tx := c.Get("tx").(*pop.Connection)
+	report := c.Get("report").(*models.Report)
+
+	err := tx.Destroy(report)
+	if err != nil {
+		return errors.WithStack(err)
+	}
+
+	return c.Redirect(301, "/reports")
+}
