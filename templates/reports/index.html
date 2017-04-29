@@ -1,13 +1,14 @@
 <h1>Reports</h1>
 
-<a href="/">Back |</a>
+<a href="/">Back</a>
 
 <div class="table-responsive">
-    <table class="table table-condensed">
+    <table class="table table-striped">
     <thead>
-        <th>File Name</th>
-        <th>Distance</th>
-        <th>Image</th>
+        <th width="30%">File Name</th>
+        <th width="20%">Distance</th>
+        <th width="20%">Image</th>
+        <th width="20%">Created At</th>
         <th></th>
     </thead>
     <tbody>
@@ -15,6 +16,7 @@
             <tr>
             <td><%= report.Filename %></td>
             <td><%= report.Distance %> Km</td>
+            <td class="created-at"><%= report.CreatedAt %></td>
             <td><a class="btn btn-primary" href="<%= report.ImageSrc %>" target="blank">Image</a></td>
             <td>
                 <ul class="list-inline">
