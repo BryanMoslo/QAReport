@@ -1,11 +1,11 @@
 <h1>QA Report</h1>
 
 <div class="report-result overhidden">
-  <!-- <h4>Log Information</h4> -->
-
   <div class="map">
     <img src="<%= report.ImageSrc %>" alt="" class="left" />
     <div class="report-data left">
+      <h4>Log Information</h4>
+      
       <ul>
         <li>
           <span class="report-label">Filename: </span>
@@ -29,9 +29,14 @@
         </li>
         <li>
           <span class="report-label">Created At: </span>
-          <span class="report-value created-at"><%= report.CreatedAt %></span>
+          <span class="report-value hide created-at"><%= report.CreatedAt %></span>
         </li>
       </ul>
+
+      <div class="action-buttons">
+        <a href="/">Back</a>
+        <a href="/reports">View my reports</a>
+      </div>
     </div>
   </div>
 </div>

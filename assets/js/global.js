@@ -15,9 +15,14 @@ $(function(){
     }
   });
 
+  $(".filename").click(function(){
+    $(".custom-file-upload").click();
+  });
+
   var createdAT = new Date($(".created-at").html());
   var month = createdAT.getUTCMonth();
   var day = createdAT.getUTCDay();
   var year = createdAT.getUTCFullYear();
   $(".created-at").html(`${day}/${month}/${year}`);
+  $(".created-at").removeClass("hide");
 });
