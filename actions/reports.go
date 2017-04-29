@@ -29,6 +29,15 @@ func findReportMW(h buffalo.Handler) buffalo.Handler {
 
 // ReportsIndex default implementation.
 func ReportsIndex(c buffalo.Context) error {
+	reports := &models.Reports{}
+	tx := c.Get("tx").(*pop.Connection)
+	err := tx.All(reports)
+	if err != nil {
+		return c.Error(404, errors.WithStack(err))
+	}
+
+	c.Set("reports", reports)
+
 	return c.Render(200, r.HTML("reports/index.html"))
 }
 
