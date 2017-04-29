@@ -202,3 +202,26 @@ input[type="file"] {
   bottom: 10px;
   font-size: 14px;
 }
+
+.back{
+  background: #64BC46;
+  color: white;
+  padding: 8px 10px;
+  font-size: 14px;
+  display: inline-block;
+
+  &:hover{
+    color: white;
+    text-decoration: none;
+    background: #61b545;
+  }
+}
+
+.list-inline{
+  a{
+    padding: 6px 8px;
+    font-size: 16px;
+    line-height: 1.5;
+    border-radius: 3px;
+  }
+}

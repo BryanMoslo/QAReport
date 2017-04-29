@@ -25,4 +25,12 @@ $(function(){
   var year = createdAT.getUTCFullYear();
   $(".created-at").html(`${day}/${month}/${year}`);
   $(".created-at").removeClass("hide");
+
+
+  var totalDistance = Math.round($(".total-distance").html() * 100) / 100;
+  $(".total-distance").html(totalDistance);
+  $(".total-distance").removeClass("hide");
+  var onMiles = totalDistance * 0.621371;
+  $(".miles-values").html(Math.round(onMiles * 100) / 100);
+
 });

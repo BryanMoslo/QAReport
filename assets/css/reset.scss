@@ -43,7 +43,15 @@ table {
 }
 .table{
 	background: rgba(255, 255, 255, 0.79);
-    border-radius: 9px;
+
+	th{
+		font-weight: 800;
+		padding: 10px 15px !important;
+	}
+
+	td{
+		vertical-align: middle !important;
+	}
 }
 
 .table-responsive{
