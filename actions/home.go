@@ -98,13 +98,14 @@ func deg2Rad(deg float64) float64 {
 }
 
 func urlFromPath(points [][]float64) string {
+	var apiKey = "AIzaSyBZgIs6dZk9xZBkFoYIHWTt3tCuBZ8BtJY"
 	var startMarker = "markers=color:blue%7Clabel:I%7C" + strconv.FormatFloat(points[0][0], 'g', -1, 64) + "," + strconv.FormatFloat(points[0][1], 'g', -1, 64)
 	var endMarker = "&markers=color:red%7Clabel:F%7C" + strconv.FormatFloat(points[len(points)-1][0], 'g', -1, 64) + "," + strconv.FormatFloat(points[len(points)-1][1], 'g', -1, 64)
 	var route = "https://maps.googleapis.com/maps/api/staticmap?" + startMarker + endMarker + "&scale=2&size=800x800&path=weight:6%7Ccolor:red%7Cenc:"
 
 	codec := polyline.Codec{Dim: 2, Scale: 1e5}
 	encodecPath := codec.EncodeCoords([]byte{}, points)
-	route = route + string(encodecPath)
+	route = route + string(encodecPath) + "&key=" + apiKey
 
 	return route
 }
